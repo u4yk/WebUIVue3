@@ -1,0 +1,38 @@
+.config-item {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    font-size: 2.5vh;
+    padding: 0.5vh 2vw;
+    cursor: pointer;
+}
+
+.config-item:hover {
+    color: rgba(0,0,0,0.5);
+    background: #fff;
+}
+
+span {
+    text-transform: capitalize;
+}
+
+input, input:focus-visible {
+    background: transparent;
+    border: 0 none;
+    border-bottom: #fff 1px solid;
+    margin-left: 1vw;
+    width: calc(90% - 2vw);
+    outline: none;
+    font-size: 2vw;
+    color: #fff;
+}
+
+input[type="range"] {
+    width: calc(80% - 2vw);
+    background-color: var(--primary-color);
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    width: 25px;
+    height: 25px;
+    background: var(--primary-color);
+}

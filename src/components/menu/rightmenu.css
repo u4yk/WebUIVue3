@@ -1,0 +1,60 @@
+ul {
+    list-style: none;
+    margin: 0 none;
+    margin-block-start: 0;
+    padding-inline-start: 0;
+    margin-block-end: 0;
+}
+
+li {
+    padding: 1vh 2vw;
+    margin: 1vh 0;
+    cursor: pointer;
+    transition: filter 0.5s;
+    border-radius: 5px;
+    filter: none;
+    filter: blur(1px);
+    /* transform: scale3d(1, 1, 1); */
+    position: relative;
+    z-index: 5;
+}
+li:hover {
+    /* filter: blur(2px); */
+    animation: stutter 4s linear 0s infinite normal forwards;
+}
+
+@keyframes stutter {
+    0% {
+        filter: blur(1px);
+    }
+    10% {
+        filter: blur(10px);
+    }
+    20% {
+        filter: blur(1px);
+    }
+    30% {
+        filter: blur(5px);
+    }
+    40% {
+        filter: blur(10px);
+    }
+    50% {
+        filter: blur(3px);
+    }
+    60% {
+        filter: blur(5px);
+    }
+    70% {
+        filter: blur(1px);
+    }
+    80% {
+        filter: blur(2px);
+    }
+    90% {
+        filter: blur(10px);
+    }
+    100% {
+        filter: blur(1px);
+    }
+}

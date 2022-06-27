@@ -1,0 +1,10 @@
+[
+    "../components/menu/AudioConfig.vue",
+    "../components/menu/ConfigMenu.vue",
+    "../components/menu/MainMenu.vue",
+    "../components/menu/MenuSystem.vue",
+    "../components/menu/KeyBinding.vue",
+    "../components/menu/VideoSettings.vue",
+    "../components/hud/Hud.vue",
+    "../components/hud/HealthBar.vue"
+]

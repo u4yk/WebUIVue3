@@ -4,16 +4,15 @@ export default () => ({
         y: 0,
         z: 0
     },
+    currentSpeaker: '',
     elevatorFloors: -1,
-    dialogue: {},
+    dialogue: [],
     displayState: 'main',
-    inventory: {
-        player: [],
-        other: []
-    },
     isReticleOn: false,
     isReticleFired: false,
     notifications: [],
     reticleColor: [255,255,255,1],
     reticleStyle: 'crosshair',
+    rotation: 0,
+    quests: []
 })

@@ -1,6 +1,6 @@
 :root{
-    /* --primary-color: rgb(4, 3, 3); */
     --primary-color: rgb(227, 249, 255);
     --secondary-color: rgb(163, 0, 0);
+    --dialogue-background: rgba(201, 185, 185, 1);
     --font-family: 'Heebo';
 }

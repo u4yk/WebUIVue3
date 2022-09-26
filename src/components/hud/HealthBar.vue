@@ -1,7 +1,7 @@
 <script setup>
 import { useGameStore } from '~/stores/game'
 import { storeToRefs } from 'pinia'
-import { computed, defineProps } from 'vue'
+import { computed } from 'vue'
 
 const {epsilon} = defineProps({
     epsilon: {

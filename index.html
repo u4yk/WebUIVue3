@@ -6,6 +6,14 @@
     <link rel="stylesheet" type="text/css" href="/css/fonts.css" />
     <link rel="stylesheet" type="text/css" href="/css/vars.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      // Fix for issue related to this bug: https://github.com/vuejs/core/issues/2513
+      Object.defineProperty(window.navigator, 'userAgent', {
+        get: () => {
+            return 'Mozilla/5.0 (X11; Ubuntu i686; rv:52.0) Gecko/20100101 Firefox/52.0'
+        },
+      });
+    </script>
     <title>Vite App</title>
   </head>
   <body>

@@ -14,21 +14,23 @@ export default ({ store, options }) => {
     // Also, memoize it as upper-case since we'll be appending state names to it for our methods.
     const suffix = options.suffix || 'Store'
     const storeName = capitalize(store.$id.replace(suffix, ''))
+    const actionPrefix = options.actionPrefix || 'set'
+    const interfacePrefix = options.interfacePrefix || 'update'
 
     /**
-     * addRequest -- creates a store action that will send data to Unreal when invoked
+     * addAction -- creates a store action that will send data to Unreal when invoked
      * @param {String} key -- the name of the state property we'll be using to create our method
      */
     const addAction = (key) => {
-        const newKey = `set${storeName}${capitalize(key)}`
+        const newKey = `${actionPrefix}${storeName}${capitalize(key)}`
         const cb = typeof store[newKey] === 'function' ? store[newKey] : () => {}
 
         const method = data => {
             //Let's make sure our data is up-to-date
+            cb(data)
             if (store.$state[key] !== data) {
                 store.$state[key] = data
             }
-            cb(data)
             ue5(newKey, data)
         }
 
@@ -40,10 +42,11 @@ export default ({ store, options }) => {
      * @param {String} key 
      */
     const addInterface = (key) => {
-        const newKey = `update${storeName}${capitalize(key)}`
-        ue.interface[newKey] = (data) => {
+        const newKey = `${interfacePrefix}${storeName}${capitalize(key)}`
+        const cb = typeof store[newKey] === 'function' ? store[newKey] : ((data) => {
             store.$state[key] = data
-        }
+        })
+        ue.interface[newKey] = store[newKey] = cb
     }
     
     // Loop through all the state entries and create our methods that will interact with Unreal
@@ -54,7 +57,11 @@ export default ({ store, options }) => {
 
     // Append the Unreal object to window so UE4/UE5 can invoke its callbacks
     if (window) {
-        window.ue = ue
+        window.ue = {
+            ...window.ue,
+            ...ue
+        }
     }
-    return {}
+    store.ue5 = ue5
+    return { }
 };

@@ -4,10 +4,28 @@ export default () => ({
     healthMax: 0,
     isDead: false,
     isPaused: false,
-    userStats: {},
-    quit: false,
     newGame: false,
     loadGame: false,
     playerLocation: {},
-    playerRotation: 0
+    playerRotation: 0,
+    playerInventory: [
+        /**
+         * {
+         * id,
+         * name,
+         * type,
+         * value,
+         * quantity,
+         * description
+         * stats,
+         * inUse,
+         * }
+         */
+    ],
+    otherInventory: {
+        name: '',
+        items: []
+    },
+    stats: {},
+    quit: false,
 })

@@ -1,5 +1,5 @@
 <template>
-    <del-phone-app appname="mail">
+    <phone-app appname="mail">
         <template #app-icon>
             <div class="icon"><div class="fa fa-envelope"></div></div>
         </template>
@@ -22,7 +22,7 @@
                 </div>
             </div>
         </template>
-    </del-phone-app>
+    </phone-app>
 </template>
 <script setup>
 import {usePhoneMailStore} from '~/stores/phone/mail'

@@ -27,5 +27,6 @@ export default () => ({
         items: []
     },
     stats: {},
+    quests: [],
     quit: false,
 })

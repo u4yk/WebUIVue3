@@ -1,11 +1,11 @@
 <script setup>      </script>
 <template>
-    <del-phone-app appname="health">
+    <phone-app appname="health">
         <template #app-icon>
             <div class="icon"><div class="fa fa-briefcase-medical"></div></div>
         </template>
         <template #app-main>
-            <div class="del-phone-app-health">
+            <div class="phone-app-health">
                 <h1 class="head">Health Check</h1>
                 <div class="content">
                     <h2 class="subhead">Health</h2>
@@ -53,7 +53,7 @@
                 </div>
             </div>
         </template>
-    </del-phone-app>
+    </phone-app>
 </template>
 <style lang="scss" scoped>
     .icon {
@@ -65,7 +65,7 @@
         background-image: linear-gradient(30deg, #1394df 0%, #20394e 50%, #0c161b 51%, #b0d9fa 100%);
         text-shadow: -1px -2px rgba(0,0,0,0.7);
     }
-    .del-phone-app-health {
+    .phone-app-health {
         height: 100%;
         width: 100%;
         position: absolute;

@@ -3,7 +3,7 @@
         <hud-compass class="hud-compass" :max-units="256" :y-offset="2" :edge-epsilon="4" v-show="displayState === 'main'"/>
         <health-bar class="health-bar" :epsilon="0.1" v-show="displayState === 'main'"/>
         <hud-dialogue v-show="displayState === 'dialogue'"/>
-        <del-phone v-show="displayState === 'phone'" />
+        <phone v-show="displayState === 'phone'" />
     </div>
 </template>
 <script setup>

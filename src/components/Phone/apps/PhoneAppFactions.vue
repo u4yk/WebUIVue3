@@ -1,12 +1,12 @@
 <template>
-    <del-phone-app appname="factions">
+    <phone-app appname="factions">
         <template #app-icon>
             <div class="icon"><div class="fa fa-users"></div></div>
         </template>
         <template #app-main>
-            <div class="del-phone-app-factions"></div>
+            <div class="phone-app-factions"></div>
         </template>
-    </del-phone-app>
+    </phone-app>
 </template>
 <style lang="scss" scoped>
     .icon {

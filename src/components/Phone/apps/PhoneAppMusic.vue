@@ -1,12 +1,12 @@
 <template>
-    <del-phone-app appname="music">
+    <phone-app appname="music">
         <template #app-icon>
             <div class="icon"><div class="fa fa-music"></div></div>
         </template>
         <template #app-main>
-            <div class="del-phone-app-music"></div>
+            <div class="phone-app-music"></div>
         </template>
-    </del-phone-app>
+    </phone-app>
 </template>
 <script>
 export default {

@@ -1,10 +1,10 @@
 <template>
-    <del-phone-app appname="quests">
+    <phone-app appname="quests">
         <template #app-icon>
             <div class="icon"><div class="fa fa-map-marker-alt"></div></div>
         </template>
         <template #app-main>
-            <div class=" del-phone-app-quests">
+            <div class=" phone-app-quests">
                 <h1>Quests</h1>
                 <accordion
                     v-for="quest in quests"
@@ -23,17 +23,23 @@
                                 <span :class="getStatusIcon(task.status)"/>
                             </div>
                         </div>
+                        <button 
+                            v-if="!['current','fail','complete'].includes(quest.status)"
+                            @click="makeCurrentQuest(quest.id)">
+                                Make Current Quest
+                        </button>
                     </template>
                 </accordion>
             </div>
         </template>
-    </del-phone-app>
+    </phone-app>
 </template>
 <script setup>
-import { useHudStore } from '~/stores/hud';
+import { useGameStore } from '~/stores/game';
 import { storeToRefs } from 'pinia';
-const hud = useHudStore()
-const {quests} = storeToRefs(hud)
+const gs = useGameStore()
+const {quests} = storeToRefs(gs)
+const {makeCurrentQuest} = gs
 const getStatusIcon = status => ({
     'fa': true,
     'fa-check': status === 'complete',
@@ -128,5 +134,16 @@ h4 {
     padding: 0 3vmin;
     font-size: 1.5vmin;
     margin: 0;
+}
+
+button {
+    height: 2em;
+    font-size: 2vmin;
+    margin: 1em 1.5em;
+    border-radius: 10px;
+    border: 0.125em solid #72aa00;
+    background: linear-gradient(to top, #87c804 0%, #72aa00 60%, #8eb92a 61%, #f4fdc2 100%);
+    color: #fff;
+    text-shadow: 1px 0px 4px #000;
 }
 </style>

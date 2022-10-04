@@ -1,15 +1,15 @@
 <template>
-    <del-phone-app appname="flashlight">
+    <phone-app appname="flashlight">
         <template #app-icon>
             <div class="icon"><div class="fa fa-lightbulb"></div></div>
         </template>
         <template #app-main>
-            <div class="del-phone-app-flashlight" :class="{enabled}">
+            <div class="phone-app-flashlight" :class="{enabled}">
                 <h1>Flashlight</h1>
-                <del-toggle :default-value="enabled" class="toggle" @toggle-updated="updateRef" />
+                <phone-toggle :default-value="enabled" class="toggle" @toggle-updated="updateRef" />
             </div>
         </template>
-    </del-phone-app>
+    </phone-app>
 </template>
 <script setup>
 import { usePhoneFlashlightStore} from '~/stores/phone/flashlight'
@@ -44,7 +44,7 @@ const updateRef = (v) => {
         flex: 1 0 100%;
     }
 
-    .del-phone-app-flashlight {
+    .phone-app-flashlight {
         position: relative;
         height: 100%;
         background: #000;

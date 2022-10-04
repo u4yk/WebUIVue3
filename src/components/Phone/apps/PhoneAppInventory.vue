@@ -1,10 +1,10 @@
 <template>
-    <del-phone-app appname="inventory">
+    <phone-app appname="inventory">
         <template #app-icon>
             <div class="icon"><div class="fa fa-archive"></div></div>
         </template>
         <template #app-main>
-            <div class="del-phone-app-inventory">
+            <div class="phone-app-inventory">
                 <h1>Inventory</h1>
                 <div class="inventory-filter">
                     <span class="left" @click="move(-1)">&#9664;</span>
@@ -33,7 +33,7 @@
                 </div>
             </div>
         </template>
-    </del-phone-app>
+    </phone-app>
 </template>
 <script setup>
 import { useGameStore } from '~/stores/game'

@@ -8,15 +8,15 @@
 </script>
 
 <template>
-    <del-phone-app appname="maps">
+    <phone-app appname="maps">
         <template #app-icon><div class="icon"><div class="fa fa-globe"></div></div></template>
         <template #app-main>
-            <div class="del-phone-app-maps">
+            <div class="phone-app-maps">
                 <div class="del-phone-map-main"></div>
                 <div class="fa fa-location-arrow" :style="styles"></div>
             </div>
         </template>
-    </del-phone-app>
+    </phone-app>
 </template>
 <style lang="scss" scoped>
     .icon {
@@ -33,7 +33,7 @@
         position: absolute;
         transform: translate(0,0);
     }
-    .del-phone-app-maps {
+    .phone-app-maps {
         position: relative;
         top: 0;
         left: 0;

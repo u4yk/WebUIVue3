@@ -19,18 +19,18 @@ const clickIcon = () => {
 }
 </script>
 <template>
-    <div class="del-phone-app" :class="{'active-state': isActiveApp}">
-        <div class="del-phone-app-icon" @click="clickIcon" v-show="isHome">
-            <div class="del-phone-app-icon-icon"><slot name="app-icon"></slot></div>
-            <div class="del-phone-app-icon-label">{{uc(appname)}}</div>
+    <div class="phone-app" :class="{'active-state': isActiveApp}">
+        <div class="phone-app-icon" @click="clickIcon" v-show="isHome">
+            <div class="phone-app-icon-icon"><slot name="app-icon"></slot></div>
+            <div class="phone-app-icon-label">{{uc(appname)}}</div>
         </div>
-        <div class="del-phone-app-main" v-show="isActiveApp">
+        <div class="phone-app-main" v-show="isActiveApp">
             <slot name="app-main"></slot>
         </div>
     </div>
 </template>
 <style scoped lang="scss">
-.del-phone-app {
+.phone-app {
     display: flex;
     flex: 1 1 100%;
     justify-content: space-around;
@@ -40,14 +40,14 @@ const clickIcon = () => {
         flex: 1 1 100%;
     }
 }
-.del-phone-app-icon { 
+.phone-app-icon { 
     position: absolute;
     width: 4vw;
     height: 4vw;
     margin: 0;
     cursor: pointer;
 }
-.del-phone-app-icon-icon {
+.phone-app-icon-icon {
     width: 3vw;
     height: 3vw;
     background: #fff;
@@ -74,7 +74,7 @@ const clickIcon = () => {
         }
     }
 }
-.del-phone-app-icon-label {
+.phone-app-icon-label {
     width: 100%;
     position: absolute;
     height: 1.25vw;
@@ -89,7 +89,7 @@ const clickIcon = () => {
     padding-bottom: 2vh;
 }
 
-.del-phone-app-main {
+.phone-app-main {
     width: 100%;
     height: 100%;
     position: absolute;

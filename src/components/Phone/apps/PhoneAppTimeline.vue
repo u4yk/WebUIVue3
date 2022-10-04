@@ -1,12 +1,12 @@
 <template>
-    <del-phone-app appname="timeline">
+    <phone-app appname="timeline">
         <template #app-icon>
             <div class="icon"><div class="fa fa-stream"></div></div>
         </template>
         <template #app-main>
-            <div class="del-phone-app-timeline"></div>
+            <div class="phone-app-timeline"></div>
         </template>
-    </del-phone-app>
+    </phone-app>
 </template>
 <script>
 export default {

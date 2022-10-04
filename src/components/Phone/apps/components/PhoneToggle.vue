@@ -1,5 +1,5 @@
 <template>
-    <div :class="{'del-toggle': true, enabled}">
+    <div :class="{'phone-toggle': true, enabled}">
         <input type="range" min="0" max="1" :value="v" class="slider" @click.prevent="updateRef"/>
     </div>
 </template>
@@ -20,7 +20,7 @@
     const enabled = computed(() => !!v.value)
 </script>
 <style lang="scss" scoped>
-.del-toggle {
+.phone-toggle {
     position: relative;
     filter: blur(0.009em);
     &.enabled {

@@ -1,12 +1,12 @@
 <template>
-    <del-phone-app appname="reticle">
+    <phone-app appname="reticle">
         <template #app-icon>
             <div class="icon"><div class="fa fa-bullseye"></div></div>
         </template>
         <template #app-main>
-            <div class="del-phone-app-reticle"></div>
+            <div class="phone-app-reticle"></div>
         </template>
-    </del-phone-app>
+    </phone-app>
 </template>
 <style lang="scss" scoped>
     .icon {

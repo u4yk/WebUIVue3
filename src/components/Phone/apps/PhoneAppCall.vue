@@ -1,15 +1,15 @@
 <template>
-    <del-phone-app appname="call">
+    <phone-app appname="call">
         <template #app-icon>
             <div class="icon"><div class="fa fa-phone"></div></div>
         </template>
         <template #app-main>
-            <div class="del-phone-app-phone">
+            <div class="phone-app-phone">
                 <div class="address-book" v-show="appState === 'address'">
                     <div v-if="addressBook.length === 0" class="empty-message">
                         <h3>There are no entries in your address book. It must be embarrassing that you have no friends.</h3>
                     </div>
-                    <del-contact
+                    <phone-contact
                         v-else
                         v-for="(contact, i) in addressBook"
                         :key="`contact_${i}`"
@@ -20,7 +20,7 @@
                     <div v-if="recentCalls.length === 0" class="empty-message">
                         <h3>No one has called you yet. Try making yourself more popular so people will want to talk to you.</h3>
                     </div>
-                    <del-contact
+                    <phone-contact
                         v-else
                         v-for="(contact, i) in recentCalls"
                         :key="`contact_${i}`"
@@ -37,14 +37,14 @@
                         <div class="hangup fa fa-phone-slash" @click="hangup" />
                     </div>
                 </div>
-                <del-selector
+                <phone-selector
                     :selection-list="selectionList"
                     :selected="currentSelected"
                     @item-selected="selected"
                 />
             </div>
         </template>
-    </del-phone-app>
+    </phone-app>
 </template>
 <script setup>
     import {usePhoneCallStore} from '~/stores/phone/phoneCall'

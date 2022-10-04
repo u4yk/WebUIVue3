@@ -13,6 +13,5 @@ export default () => ({
     notifications: [],
     reticleColor: [255,255,255,1],
     reticleStyle: 'crosshair',
-    rotation: 0,
-    quests: []
+    rotation: 0
 })

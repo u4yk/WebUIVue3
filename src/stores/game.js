@@ -49,6 +49,33 @@ export const useGameStore = createStore('gameStore', {
             
             this.$state.playerInventory = inv
             this.ue5('setConsumedItem', item)
-        }
+        },
+        makeCurrentQuest (id) {
+            const quests = [...new Set(this.$state.quests)].map(v => {
+                const prevStatus = v.status
+                v.status = v.id === id ? 'current' : prevStatus === 'current' ? 'open' : prevStatus
+
+                if (prevStatus !== v.status) {
+                    if (v.status === 'current') {
+                        let last = 'complete'
+                        v.tasks = v.tasks.map(w => {
+                            if(last === 'complete' && w.status === 'open') {
+                                w.status = 'current'
+                                console.log(w.status)
+                            }
+                            last = w.status
+                            return w
+                        })
+                    } else {
+                        v.tasks = v.tasks.map(w => ({
+                            ...w,
+                            status: w.status === 'current' ? 'open' : w.status
+                        }))
+                    }
+                }
+                return v
+            })
+            this.$state.quests = quests
+        },
     }
 })

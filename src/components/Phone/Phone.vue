@@ -10,21 +10,21 @@ const goHome = () => {
 }
 </script>
 <template>
-    <div class="del-phone">
-        <div class="del-phone-parent">
-            <div class="del-phone-underlay"></div>
-            <div class="del-phone-wrapper">
-                <div class="del-phone-logo"></div>
+    <div class="phone">
+        <div class="phone-parent">
+            <div class="phone-underlay"></div>
+            <div class="phone-logo-wrapper">
+                <div class="phone-logo"></div>
             </div>
-            <div class="del-phone-container">
+            <div class="phone-container">
                 <component v-for="(item, i) in appList" :is="item.appname" :name="item.appname" :key="i" />
             </div>
-            <button class="del-phone-button" @click="goHome"></button>
+            <button class="phone-button" @click="goHome"></button>
         </div>
     </div>
 </template>
 <style lang="scss" scoped>
-.del-phone {
+.phone {
     position: fixed;
     width: 35vw;
     height: 90vh;
@@ -32,16 +32,16 @@ const goHome = () => {
     right: 5vw;
     border-radius: 20px;
     overflow: hidden;
+    display: flex;
 }
-.del-phone-parent {
+.phone-parent {
     width: 100%;
     height: 100%;
-    float: left;
     position: relative;
     background: rgb(49, 48, 48);
 }
 
-.del-phone-underlay {
+.phone-underlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -54,7 +54,7 @@ const goHome = () => {
     border-radius: 25px;
 }
 
-.del-phone-button {
+.phone-button {
     width: 15vw;
     height: 4vh;
     z-index: 3;
@@ -73,7 +73,7 @@ const goHome = () => {
     }
 }
 
-.del-phone-container {
+.phone-container {
     padding: 4.5vh 5% 0.5vh;
     width: 70%;
     height: 72vh;
@@ -87,8 +87,9 @@ const goHome = () => {
     position: relative;
     background-image: linear-gradient( 135deg, #F97794 10%, #623AA2 100%);
     display: grid;
-    grid-template-rows: repeat( auto-fill, minmax(5vw, 1fr) );
-    grid-template-columns: repeat( auto-fit, minmax(3.5vw, 1fr) );
-    gap: 1vh 0.25vw;
+    grid-template-rows: repeat( auto-fill, minmax(5em, 1fr) );
+    grid-template-columns: repeat( auto-fit, minmax(4em, 1fr) );
+    gap: 2em 1.5em;
+    user-select: none;
 }
 </style>

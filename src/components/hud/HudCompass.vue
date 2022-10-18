@@ -35,7 +35,7 @@ const {maxUnits, yOffset, edgeEpsilon } = defineProps({
 const { rotation } = storeToRefs(useHudStore())
 const quad = maxUnits / 4
 const quadMax = quad - 1
-const ulStyles = computed(() => `transform: rotateX(-90deg) rotate(${-(rotation.value - 180)}deg);`)
+const ulStyles = computed(() => `transform: rotateX(-90deg) rotate(${-(rotation.value - 90)}deg);`)
 const offset = 360 / maxUnits
 const halfPoint = quad / 2
 const qtPoint = quad / 4

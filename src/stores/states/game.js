@@ -8,20 +8,7 @@ export default () => ({
     loadGame: false,
     playerLocation: {},
     playerRotation: 0,
-    playerInventory: [
-        /**
-         * {
-         * id,
-         * name,
-         * type,
-         * value,
-         * quantity,
-         * description
-         * stats,
-         * inUse,
-         * }
-         */
-    ],
+    playerInventory: [],
     otherInventory: {
         name: '',
         items: []

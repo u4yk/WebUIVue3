@@ -56,8 +56,8 @@ const clicked = (id, next) => {
     background: var(--dialogue-background);
     padding: 0.25em 1em;
     width: auto;
-    max-width: 70%;
-    min-width: 35%;
+    max-width: 80%;
+    min-width: 50%;
     clear: both;
     margin-bottom: 1em;
     cursor: default;
@@ -68,8 +68,8 @@ const clicked = (id, next) => {
     background: var(--dialogue-background);
     padding: 0 1em;
     width: auto;
-    max-width: 70%;
-    min-width: 35%;
+    max-width: 80%;
+    min-width: 50%;
     clear: both;
     text-align: right;
     margin-bottom: 1em;
@@ -100,8 +100,8 @@ const clicked = (id, next) => {
     background: var(--dialogue-background);
     padding: 0.25em 1em;
     width: auto;
-    max-width: 70%;
-    min-width: 35%;
+    max-width: 80%;
+    min-width: 50%;
     clear: both;
     margin-bottom: 1em;
     cursor: default;

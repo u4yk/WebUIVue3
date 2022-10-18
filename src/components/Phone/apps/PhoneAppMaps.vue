@@ -4,7 +4,7 @@
     import { computed } from 'vue'
 
     const { rotation } = storeToRefs(useHudStore())
-    const styles = computed(() => `transform: rotate(${(rotation.value + 135)}deg);`)
+    const styles = computed(() => `transform: rotate(${(rotation.value + 225)}deg);`)
 </script>
 
 <template>

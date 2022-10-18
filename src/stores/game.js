@@ -61,7 +61,6 @@ export const useGameStore = createStore('gameStore', {
                         v.tasks = v.tasks.map(w => {
                             if(last === 'complete' && w.status === 'open') {
                                 w.status = 'current'
-                                console.log(w.status)
                             }
                             last = w.status
                             return w

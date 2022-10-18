@@ -31,13 +31,13 @@ const close = () => {
     position: fixed;
     left: 0;
     bottom: 5vh;
-    width: 50vw;
+    width: 100vw;
     height: 90vh;
     font-size: 1vw;
     top: 0;
 }
 .dialogue-wrapper {
-    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 1) 100%);
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 1) 100%);
 }
 button {
     background: var(--dialogue-background);

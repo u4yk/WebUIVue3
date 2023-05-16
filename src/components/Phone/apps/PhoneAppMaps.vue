@@ -12,7 +12,7 @@
         <template #app-icon><div class="icon"><div class="fa fa-globe"></div></div></template>
         <template #app-main>
             <div class="phone-app-maps">
-                <div class="del-phone-map-main"></div>
+                <div class="phone-app-map-main"></div>
                 <div class="fa fa-location-arrow" :style="styles"></div>
             </div>
         </template>
@@ -29,7 +29,7 @@
         background-image: linear-gradient(45deg, #222d3f 0%, #237ff8 100%);
         text-shadow: -1px -2px 2px #000;
     }
-    .del-phone-map-main {
+    .phone-app-map-main {
         position: absolute;
         transform: translate(0,0);
     }

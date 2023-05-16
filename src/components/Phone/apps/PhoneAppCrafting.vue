@@ -4,7 +4,7 @@
             <div class="icon"><div class="fas fa-tools"></div></div>
         </template>
         <template #app-main>
-            <div class="del-app-crafting"></div>
+            <div class="phone-app-crafting"></div>
         </template>
     </phone-app>
 </template>

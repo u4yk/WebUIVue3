@@ -1,3 +1,9 @@
+<script setup>
+import { useHudStore } from '~/stores/hud';
+import { storeToRefs } from 'pinia';
+const hud = useHudStore()
+const {displayState} = storeToRefs(hud)
+</script>
 <template>
     <div class="hud">
         <hud-compass class="hud-compass" :max-units="256" :y-offset="2" :edge-epsilon="4" v-show="displayState === 'main'"/>
@@ -6,12 +12,6 @@
         <phone v-show="displayState === 'phone'" />
     </div>
 </template>
-<script setup>
-import { useHudStore } from '~/stores/hud';
-import { storeToRefs } from 'pinia';
-const hud = useHudStore()
-const {displayState} = storeToRefs(hud)
-</script>
 <style scoped>
 .hud-compass {
     position: fixed;

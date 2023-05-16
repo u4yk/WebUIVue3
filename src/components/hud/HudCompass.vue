@@ -50,7 +50,7 @@ const liStyle = (i) => {
     extra = ' font-weight: 400; color: var(--compass-red);'
   } else if (halfPoint === mod) {
     em = 2.75
-    extra = ' font-weight: 300; color: var(--compass-blue);'
+    extra = ' font-weight: 400; color: var(--compass-blue);'
   }else if ([qtPoint, qt3Point].includes(mod)) {
     em = 2.25
     extra = ' font-weight: 300;'
@@ -76,8 +76,10 @@ ul {
   width: 100%;
   height: 100%;
   transform-style: preserve-3d;
-  transform: rotateX(-90deg) rotate(45deg);
+  transform: rotate3d(-90deg, 0 45deg);
   position: relative;
+  background: transparent;
+  backface-visibility: hidden;
 }
 
 li {
@@ -89,7 +91,7 @@ li {
   backface-visibility: hidden;
   font-weight: 600;
   color: rgb(0, 0, 0);
-  // filter: blur(0.6vw);
+
   &:hover {
     animation: none;
   }

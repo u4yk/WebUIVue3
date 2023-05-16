@@ -9,6 +9,7 @@ const video = useVideoStore()
 const updateRef = (e, k) => { 
     video[`setVideo${capitalize(k)}`](~~e.target.value)
 }
+const isCurrentClickedItem = item => currentClickedItem === `video_${item}`
 
 </script>
 <template>
@@ -18,7 +19,7 @@ const updateRef = (e, k) => {
             <span>
                 {{v.value}}
                 <input 
-                    v-if="currentClickedItem === `video_${v.key}`"
+                    v-if="isCurrentClickedItem(v.key)"
                     :value="v.value"
                     @change.stop="updateRef($event, v.key)"
                     :name="`video_${v.key}`"

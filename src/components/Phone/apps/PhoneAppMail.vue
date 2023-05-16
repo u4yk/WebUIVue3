@@ -4,7 +4,7 @@
             <div class="icon"><div class="fa fa-envelope"></div></div>
         </template>
         <template #app-main>
-            <div class="del-app-mail">
+            <div class="phone-app-mail">
                 <h1>Mail</h1>
                 <div class="messages">
                     <accordion

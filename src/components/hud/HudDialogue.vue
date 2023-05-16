@@ -1,3 +1,22 @@
+<script setup>
+import { useHudStore } from '~/stores/hud'
+import { storeToRefs } from 'pinia'
+import { computed } from '@vue/reactivity'
+
+const hud = useHudStore()
+const { dialogue } = storeToRefs(hud)
+const { replaceHudDialogue, setHudDisplayState } = hud
+const currentDlg = computed( () => {
+    return dialogue
+})
+
+const dialogueResponse = ({id, next}) => {
+    replaceHudDialogue(id, next)
+}
+const close = () => {
+    setHudDisplayState('main')
+}
+</script>
 <template>
     <div class="hud-dialogue">
         <shared-dialogue
@@ -7,25 +26,6 @@
         <button @click="close">End Conversation</button>
     </div>
 </template>
-<script setup>
-import { useHudStore } from '~/stores/hud'
-import { storeToRefs } from 'pinia'
-import { computed } from '@vue/reactivity'
-
-const hud = useHudStore()
-const { dialogue } = storeToRefs(hud)
-const { replaceHudDialogue, setHudDialogue, setHudDisplayState } = hud
-const currentDlg = computed( () => {
-    return dialogue
-})
-
-const dialogueResponse = ({id, next}) => {
-    replaceHudDialogue(id)
-}
-const close = () => {
-    setHudDisplayState('main')
-}
-</script>
 <style scoped>
 .hud-dialogue {
     position: fixed;

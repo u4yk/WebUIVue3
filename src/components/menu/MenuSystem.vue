@@ -7,15 +7,15 @@ const menu = useMenuStore()
 const {currentSubMenu, currentClickedItem} = storeToRefs(menu)
 const isValidSubMenu = computed(() => ['audio', 'video', 'key-binding'].includes(currentSubMenu.value))
 const h1 = computed(() => currentSubMenu.value.replace('-', ' '))
-
+const getClasses = submenu => ({'is-visible': currentSubMenu === submenu})
 </script>
 <template>
     <div class="menu-system" @click.stop="currentClickedItem = ''">
         <div :class="{'is-visible': isValidSubMenu}" class="left-menu left-item">
             <h1>{{h1}}</h1>
-            <audio-config class='left-item' :class="{'is-visible': currentSubMenu === 'audio'}"></audio-config>
-            <key-binding class='left-item' :class="{'is-visible': currentSubMenu === 'key-binding'}"></key-binding>
-            <video-settings class='left-item' :class="{'is-visible': currentSubMenu === 'video'}"></video-settings>
+            <audio-config class='left-item' :class="getClasses('audio')"></audio-config>
+            <key-binding class='left-item' :class="getClasses('key-binding')"></key-binding>
+            <video-settings class='left-item' :class="getClasses('video')"></video-settings>
         </div>
         <div class="right-menu">
             <main-menu v-show="currentSubMenu === ''"></main-menu>

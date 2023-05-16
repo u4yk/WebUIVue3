@@ -22,18 +22,23 @@ export default ({ store, options }) => {
      * @param {String} key -- the name of the state property we'll be using to create our method
      */
     const addAction = (key) => {
+        // We'll be overwriting the method if it exists -- let's make a copy of it.  If it doesn't exist,
+        // just create a NOP function.
         const newKey = `${actionPrefix}${storeName}${capitalize(key)}`
-        const cb = typeof store[newKey] === 'function' ? store[newKey] : () => {}
+        const cb = typeof store[newKey] === 'function' ? store[newKey] : (() => {})
 
         const method = data => {
-            //Let's make sure our data is up-to-date
+            // Invoke the method copy/NOP.
             cb(data)
+            // Let's make sure our data is up-to-date.
             if (store.$state[key] !== data) {
                 store.$state[key] = data
             }
+            // Pass our data to Unreal.
             ue5(newKey, data)
         }
 
+        // Assign the action to the store.
         store[newKey] = method
     }
 
@@ -42,10 +47,15 @@ export default ({ store, options }) => {
      * @param {String} key 
      */
     const addInterface = (key) => {
+        // Create a new callback method that Unreal can reference. If there's already a method
+        // defined, use that instead.
         const newKey = `${interfacePrefix}${storeName}${capitalize(key)}`
         const cb = typeof store[newKey] === 'function' ? store[newKey] : ((data) => {
             store.$state[key] = data
         })
+
+        // Assign our new method as a property of this store. Then, assign it to ue.interface
+        // since that is the object Unreal will reference.
         ue.interface[newKey] = store[newKey] = cb
     }
     

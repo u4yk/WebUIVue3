@@ -76,5 +76,9 @@ export const useGameStore = createStore('gameStore', {
             })
             this.$state.quests = quests
         },
+        updateGameOtherInventory (other) {
+            this.otherInventory = other;
+            this.currentSection = other.name?.length > 0 ? 'inventory' : this.currentSection
+        }
     }
 })

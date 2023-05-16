@@ -5,7 +5,7 @@ export const useHudStore = createStore('hudStore', {
     useUnreal: true,
     state,
     actions: {
-        replaceHudDialogue (id) {
+        replaceHudDialogue (id, next) {
             const dlg = JSON.parse(JSON.stringify(this.dialogue))
             const last = dlg[dlg.length - 1]
             const response = last.request.responses.find(v => v.id === id)
@@ -13,7 +13,7 @@ export const useHudStore = createStore('hudStore', {
             if (response) {
                 last.response = response
             }
-            this.setHudDialogue(response.next)
+            this.setHudDialogue(next)
             this.dialogue = dlg
         },
         updateHudDialogue (res) {
